@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+    
+    <!-- 2nd milestone
+    per la seconda milestone, index.html dovrà eseguire una chiamata ajax (meglio se con vuejs) verso app/server.php
+
+    -->
+    <div id="app" >
+
+        <header>
+            <div  class="container">
+                <img src="img/logo.png" alt="logo" />
+                <select v-model="selected" name='search' @change='search'>
+                  <option value="">All</option>
+                  <option value="Rock">Rock</option>
+                  <option value="Pop">Pop</option>
+                  <option value="Jazz">Jazz</option>
+                  <option value="Metal">Metal</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="cds-container container">
+            <!-- Disco ad esempio -->
+            <div  class="cd" v-for='elem in playList' v-if="selected === elem.genre || selected === ''">
+                <img :src="elem.poster" alt="">
+                <h3>{{elem.title}}</h3>
+                <span class="author">{{elem.author}}</span>
+                <span class="year">{{elem.years}}</span>
+            </div>
+        </div>
+      </div>
+
+
+</body>
+</html>

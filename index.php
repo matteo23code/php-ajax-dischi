@@ -13,18 +13,36 @@ require_once __DIR__ . '/database/database.php';
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dischi</title>
+    <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
-      <?php foreach($dischi as $key => $dischiValue) { ?>
-          
-          <div>
-  <div class='content'>
-        <h2><?php echo $dischiValue['title']?></h2>
-        <h3><?php echo $dischiValue['author']?></h3>
-        <img src="<?php echo $dischiValue['poster']?>" alt="">   
+     <header>
+        <div class="container">
+            <img src="../img/logo.png" alt="logo" />
+            <select v-model="selected" name='search' @change='search'>
+              <option value="">All</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Metal">Metal</option>
+            </select>
         </div>
-        </div>
-        <?php } ?>
+     </header>
+
+    <main> 
+
+        <div class='cds-container container'> 
+            <?php foreach($dischi as $dischiValue) { ?>        
+            <div class="cd">
+                    <img src="<?php echo $dischiValue['poster']?>" alt="">   
+                    <h3><?php echo $dischiValue['title']?></h3>
+                    <span><?php echo $dischiValue['author']?></span>
+                    <span><?php echo $dischiValue['years']?></span>
+                </div>
+                <?php } ?>
+            </div>
+    </main>
+    
 
     
 </body>
