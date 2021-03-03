@@ -5,6 +5,7 @@
 // per la prima milestone
 require_once __DIR__ . '/database/database.php';
 
+
 // qui a questo punto possiamo creare (per la prima milestone) tutto il nostro html e ciclare i nostri dischi (sempre in php)
 // e stampare copertina, titolo e così via, come da screenshot.
 ?>
@@ -12,7 +13,7 @@ require_once __DIR__ . '/database/database.php';
 <html lang="it">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dischi</title>
+    <title>Dischi index.php</title>
     <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
